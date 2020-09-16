@@ -1,0 +1,71 @@
+<ion-content [fullscreen]="true">
+  <div style="margin-left: 26px; margin-top: 34px">
+    <ion-icon name="chevron-back-outline"></ion-icon><span style="font-size: 20px; margin-left: 8px;">Back</span>
+  </div>
+  <div class="Select-Fee-Payment-Option">Select Fee <br />Payment Option</div>
+  <div class="Yearly-Total-Fees-Secondary-Section">
+    Yearly Total Fees (Secondary section)
+  </div>
+
+  <ion-grid style="margin-left: 27px">
+    <ion-row *ngFor="let feedDetails of feedataStatic">
+      <ion-col>
+        <div><span> &#x20B9;</span>{{feedDetails.amount}}</div>
+      </ion-col>
+
+      <ion-col>
+        <div>{{feedDetails.feename}}</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="Payout-Term">Payout Term</div>
+
+  <div style="margin-left: 31px">
+    <button
+      class="Rectangle-34 .Annually"
+      (click)="feeCalculation('annually')"
+      color="light"
+    >
+      <br />Annually
+    </button>
+    <button
+      class="Rectangle-34 .Half-Yearly"
+      (click)="feeCalculation('halfQuaterly')"
+      color="light"
+    >
+      Half <br />
+      Quaterly
+    </button>
+    <button
+      class="Rectangle-34 .Quarterly"
+      (click)="feeCalculation('quaterly')"
+      color="light"
+    >
+      <br />Quaterly
+    </button>
+    <button
+      class="Rectangle-34 .Monthly"
+      (click)="feeCalculation('monthly')"
+      color="light"
+    >
+      <br />Monthly
+    </button>
+  </div>
+  <ion-grid style="margin-left: 27px; margin-top: 27.6px">
+    <ion-row *ngFor="let feedDetails of feedata">
+      <ion-col>
+        <div class="Estimated-School-Fee-Payouts">{{feedDetails.feename}}</div>
+        <span class="as-per-annual-term-plan"> {{feedDetails.sub}}</span>
+      </ion-col>
+
+      <ion-col>
+        <div>  {{feedDetails.amount}}</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <button class="Rectangle" color="primary">
+    Proceed to pay <span> &#x20B9;</span> {{total}}
+  </button>
+</ion-content>

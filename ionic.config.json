@@ -1,0 +1,7 @@
+{
+  "name": "kotak",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
